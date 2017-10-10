@@ -22,10 +22,10 @@ namespace DuurHooiClicker
         private int passivehay = 1;
         private bool passivehayActive = false;
 
-        private static string GameData = "GameData";
+        private static string GameData = "GameData2";
         private static string hayPref = "Hay";
         private static string hayseeklevelPref = "HaySeek";
-        private static string passivehayPref = "HaySeek";
+        private static string passivehayPref = "PassiveHay";
 
         TextView haylabel;
 
@@ -47,6 +47,7 @@ namespace DuurHooiClicker
             var HayCursus = FindViewById<Button>(Resource.Id.HayCursus);
             HayCursus.Click += HayCursus_Click;
 
+            //ResetSet();
             InitializeTimer();
             RetrieveSet();
 
@@ -85,7 +86,6 @@ namespace DuurHooiClicker
                 AddHay(passivehay);
             }
         }
-
 
         protected override void OnDestroy()
         {
@@ -144,6 +144,19 @@ namespace DuurHooiClicker
             passivehayActive = prefs.GetBoolean(passivehayPref, false);
 
             RunOnUiThread(() => Toast.MakeText(this, "Hooi opgegraven!", ToastLength.Short).Show());
+        }
+
+        private void ResetSet()
+        {
+            // Reset
+            var prefs = Application.Context.GetSharedPreferences(GameData, FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutInt(hayPref, 0);
+            prefEditor.PutInt(hayseeklevelPref, 0);
+            prefEditor.PutBoolean(passivehayPref, false);
+            prefEditor.Commit();
+
+            RunOnUiThread(() => Toast.MakeText(this, "Hooi verkocht!", ToastLength.Short).Show());
         }
     }
 }

@@ -36,6 +36,8 @@ namespace DuurHooiClicker
         {
             base.OnCreate(savedInstanceState);
 
+            RetrieveSet();
+
             // Create your application here
             SetContentView(Resource.Layout.Game);
 
@@ -55,7 +57,6 @@ namespace DuurHooiClicker
 
             //ResetSet();
             InitializeTimer();
-            RetrieveSet();
 
             t.Enabled = passivehayActive;
 
@@ -65,14 +66,17 @@ namespace DuurHooiClicker
         private void PassiveHay_Click(object sender, EventArgs e)
         {
             t.Enabled = !t.Enabled;
+            passivehayActive = t.Enabled;
 
             if (t.Enabled)
-            {
+            { 
                 btnPassiveHay.Text = "Zoeken naar Passief Hooi";
             }
             else
             {
-                btnPassiveHay.Text = "Geen Passief Hooi";
+                AddHay(-100);
+
+                btnPassiveHay.Text = "Hooi Zoeken? 100 Hooi!";
             }
         }
 
@@ -165,7 +169,7 @@ namespace DuurHooiClicker
             prefEditor.PutBoolean(passivehayPref, false);
             prefEditor.Commit();
 
-            RunOnUiThread(() => Toast.MakeText(this, "Hooi verkocht!", ToastLength.Short).Show());
+            RunOnUiThread(() => Toast.MakeText(this, "Hooi kwijt!", ToastLength.Short).Show());
         }
     }
 }

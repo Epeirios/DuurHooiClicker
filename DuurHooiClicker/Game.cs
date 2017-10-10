@@ -8,7 +8,7 @@ using Android.Widget;
 using System;
 using System.Timers;
 
-namespace FindHayApp
+namespace DuurHooiClicker
 {
     [Activity(Label = "Game")]
     public class Game : Activity

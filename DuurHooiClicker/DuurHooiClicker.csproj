@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6F9AC154-5C2A-4EE1-8FEB-23A63D262AF1}</ProjectGuid>
+    <ProjectGuid>{1B4A5384-9537-427D-8166-6F91669BA6DA}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FindHayApp</RootNamespace>
-    <AssemblyName>FindHayApp</AssemblyName>
+    <RootNamespace>DuurHooiClicker</RootNamespace>
+    <AssemblyName>DuurHooiClicker</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>

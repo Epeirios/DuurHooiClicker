@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindHayApp", "FindHayApp\FindHayApp.csproj", "{6F9AC154-5C2A-4EE1-8FEB-23A63D262AF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuurHooiClicker", "DuurHooiClicker\DuurHooiClicker.csproj", "{1B4A5384-9537-427D-8166-6F91669BA6DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6F9AC154-5C2A-4EE1-8FEB-23A63D262AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F9AC154-5C2A-4EE1-8FEB-23A63D262AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F9AC154-5C2A-4EE1-8FEB-23A63D262AF1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{6F9AC154-5C2A-4EE1-8FEB-23A63D262AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F9AC154-5C2A-4EE1-8FEB-23A63D262AF1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F9AC154-5C2A-4EE1-8FEB-23A63D262AF1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1B4A5384-9537-427D-8166-6F91669BA6DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B4A5384-9537-427D-8166-6F91669BA6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B4A5384-9537-427D-8166-6F91669BA6DA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1B4A5384-9537-427D-8166-6F91669BA6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B4A5384-9537-427D-8166-6F91669BA6DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B4A5384-9537-427D-8166-6F91669BA6DA}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

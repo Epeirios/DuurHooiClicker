@@ -28,6 +28,9 @@ namespace DuurHooiClicker
         private static string passivehayPref = "PassiveHay";
 
         TextView haylabel;
+        ImageButton btnFindHay;
+        Button btnHayCursus;
+        Button btnPassiveHay;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -40,29 +43,42 @@ namespace DuurHooiClicker
 
 
             //findhay button
-            var FindHay = FindViewById<ImageButton>(Resource.Id.FindHay);
-            FindHay.Click += FindHay_Click;
+            btnFindHay = FindViewById<ImageButton>(Resource.Id.FindHay);
+            btnFindHay.Click += FindHay_Click;
 
             //findhay button
-            var HayCursus = FindViewById<Button>(Resource.Id.HayCursus);
-            HayCursus.Click += HayCursus_Click;
+            btnHayCursus = FindViewById<Button>(Resource.Id.HayCursus);
+            btnHayCursus.Click += HayCursus_Click;
+
+            btnPassiveHay = FindViewById<Button>(Resource.Id.btnPassiveHay);
+            btnPassiveHay.Click += PassiveHay_Click;
 
             //ResetSet();
             InitializeTimer();
             RetrieveSet();
 
-            if (passivehayActive)
-            {
-                t.Enabled = true;
-            }
+            t.Enabled = passivehayActive;
 
             UpdateView();
         }
 
+        private void PassiveHay_Click(object sender, EventArgs e)
+        {
+            t.Enabled = !t.Enabled;
+
+            if (t.Enabled)
+            {
+                btnPassiveHay.Text = "Zoeken naar Passief Hooi";
+            }
+            else
+            {
+                btnPassiveHay.Text = "Geen Passief Hooi";
+            }
+        }
+
         private void InitializeTimer()
         {
-            counter = 0;
-            t.Interval = 750;
+            t.Interval = 1000;
 
             AddHay(passivehay);
             t.Elapsed += new ElapsedEventHandler(Timer_Tick);
@@ -71,20 +87,14 @@ namespace DuurHooiClicker
         private void AddHay(int amountofhay)
         {
             hay += amountofhay;
+            UpdateView();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (counter >= 3)
-            {
-                t.Enabled = false;
-            }
-            else
-            {
-                //do something here 
-                counter++;
-                AddHay(passivehay);
-            }
+            //do something here 
+            RunOnUiThread(() => AddHay(passivehay));
+            //AddHay(passivehay);
         }
 
         protected override void OnDestroy()
@@ -101,8 +111,7 @@ namespace DuurHooiClicker
             {
                 int price = 10;
                 hayseeklevel += 1;
-                hay = hay - price;
-                UpdateView();
+                AddHay(-1 * price);
             }
         }
 
@@ -116,7 +125,7 @@ namespace DuurHooiClicker
         {
             hay += 1 + hayseeklevel;
             TextView haylabel = FindViewById<TextView>(Resource.Id.HayLabel);
-            RunOnUiThread(() => hay = hay + passivehay);
+            //RunOnUiThread(() => hay = hay + passivehay);
             haylabel.Text = "Hay: " + hay.ToString();
         }
 

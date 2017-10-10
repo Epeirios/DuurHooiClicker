@@ -56,6 +56,7 @@ namespace FindHayApp
             }
 
             UpdateView();
+        }
 
         private void InitializeTimer()
         {

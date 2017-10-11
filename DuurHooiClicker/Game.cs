@@ -43,7 +43,6 @@ namespace DuurHooiClicker
 
             haylabel = FindViewById<TextView>(Resource.Id.HayLabel);
 
-
             //findhay button
             btnFindHay = FindViewById<ImageButton>(Resource.Id.FindHay);
             btnFindHay.Click += FindHay_Click;
@@ -52,6 +51,7 @@ namespace DuurHooiClicker
             btnHayCursus = FindViewById<Button>(Resource.Id.HayCursus);
             btnHayCursus.Click += HayCursus_Click;
 
+            //passivehay button
             btnPassiveHay = FindViewById<Button>(Resource.Id.btnPassiveHay);
             btnPassiveHay.Click += PassiveHay_Click;
 
@@ -127,10 +127,8 @@ namespace DuurHooiClicker
         //findhay method
         private void FindHay_Click(object sender, EventArgs e)
         {
-            hay += 1 + hayseeklevel;
-            TextView haylabel = FindViewById<TextView>(Resource.Id.HayLabel);
-            //RunOnUiThread(() => hay = hay + passivehay);
-            haylabel.Text = "Hay: " + hay.ToString();
+            AddHay(1 + hayseeklevel);
+            UpdateView();
         }
 
         // Function called from OnDestroy

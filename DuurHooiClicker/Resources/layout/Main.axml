@@ -13,8 +13,11 @@
         android:layout_marginRight="@android:dimen/notification_large_icon_height"
         android:layout_marginLeft="@android:dimen/notification_large_icon_height"
         android:layout_margin="@android:dimen/notification_large_icon_width" />
-    <ImageView
-        android:src="@drawable/hay"
+    <Button
+        android:text="Achievements"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@android:dimen/notification_large_icon_height"
+        android:layout_marginLeft="@android:dimen/notification_large_icon_height"
+        android:id="@+id/btnAchievements" />
 </LinearLayout>

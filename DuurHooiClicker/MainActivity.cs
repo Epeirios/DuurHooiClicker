@@ -24,6 +24,9 @@ namespace DuurHooiClicker
             var btnGame = FindViewById<Button>(Resource.Id.btnStartGame);
             btnGame.Click += btnGame_Click;
 
+            var btnAchievements = FindViewById<Button>(Resource.Id.btnAchievements);
+            btnAchievements.Click += btnAchievements_Click;
+
 
         }
 
@@ -32,6 +35,13 @@ namespace DuurHooiClicker
             _player.Stop();
 
             StartActivity(typeof(Game));
+        }
+
+        private void btnAchievements_Click(object sender, System.EventArgs e)
+        {
+            _player.Stop();
+
+            StartActivity(typeof(Achievements));
         }
     }
 }

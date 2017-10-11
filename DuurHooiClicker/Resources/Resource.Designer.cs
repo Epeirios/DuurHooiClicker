@@ -72,6 +72,9 @@ namespace DuurHooiClicker
 			// aapt resource value: 0x7f060000
 			public const int HayLabel = 2131099648;
 			
+			// aapt resource value: 0x7f060005
+			public const int btnAchievements = 2131099653;
+			
 			// aapt resource value: 0x7f060003
 			public const int btnPassiveHay = 2131099651;
 			
@@ -92,10 +95,13 @@ namespace DuurHooiClicker
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Game = 2130903040;
+			public const int Achievements = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int Game = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Main = 2130903042;
 			
 			static Layout()
 			{

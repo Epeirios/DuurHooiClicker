@@ -5,8 +5,12 @@ using Android.Widget;
 namespace DuurHooiClicker
 {
     [Activity(Label = "Achievements")]
-    internal class Achievements : Activity
+    public class Achievements : Activity
     {
+
+        bool achievment_miljoenhooi = false;
+        bool achievement_mijardhooi = false;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);

@@ -50,6 +50,33 @@ namespace DuurHooiClicker
 			// aapt resource value: 0x7f020001
 			public const int icon = 2130837505;
 			
+			// aapt resource value: 0x7f020002
+			public const int sample_1 = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int sample_2 = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int sample_3 = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int sample_4 = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int sample_5 = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int sample_6 = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int sample_7 = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int sample_8 = 2130837513;
+			
+			// aapt resource value: 0x7f02000a
+			public const int sample_9 = 2130837514;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -63,23 +90,26 @@ namespace DuurHooiClicker
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060001
-			public const int FindHay = 2131099649;
-			
 			// aapt resource value: 0x7f060002
-			public const int HayCursus = 2131099650;
-			
-			// aapt resource value: 0x7f060000
-			public const int HayLabel = 2131099648;
-			
-			// aapt resource value: 0x7f060005
-			public const int btnAchievements = 2131099653;
+			public const int FindHay = 2131099650;
 			
 			// aapt resource value: 0x7f060003
-			public const int btnPassiveHay = 2131099651;
+			public const int HayCursus = 2131099651;
+			
+			// aapt resource value: 0x7f060001
+			public const int HayLabel = 2131099649;
+			
+			// aapt resource value: 0x7f060006
+			public const int btnAchievements = 2131099654;
 			
 			// aapt resource value: 0x7f060004
-			public const int btnStartGame = 2131099652;
+			public const int btnPassiveHay = 2131099652;
+			
+			// aapt resource value: 0x7f060005
+			public const int btnStartGame = 2131099653;
+			
+			// aapt resource value: 0x7f060000
+			public const int gridAchievements = 2131099648;
 			
 			static Id()
 			{

@@ -51,7 +51,7 @@ namespace DuurHooiClicker
             //ResetSet();
             InitializeTimer();
 
-            t.Enabled = Convert.ToBoolean(DataManager.Instance.RetrieveData(passivehayActive));            
+            t.Enabled = GameDataFacade.PassiveHayActive;            
 
             UpdateView();
         }
@@ -59,7 +59,7 @@ namespace DuurHooiClicker
         private void PassiveHay_Click(object sender, EventArgs e)
         {
             t.Enabled = !t.Enabled;
-            DataManager.Instance.SaveData(passivehayActive, Convert.ToInt32(t.Enabled));
+            GameDataFacade.PassiveHayActive = t.Enabled;
 
             if (t.Enabled)
             {
@@ -83,7 +83,7 @@ namespace DuurHooiClicker
 
         private void AddHay(int amountofhay)
         {
-            DataManager.Instance.SaveData(hay, DataManager.Instance.RetrieveData(hay) + amountofhay);
+            GameDataFacade.Hay += amountofhay;
             UpdateView();
         }
 
@@ -97,23 +97,23 @@ namespace DuurHooiClicker
         //basicseeker method
         private void HayCursus_Click(object sender, EventArgs e)
         {
-            if (DataManager.Instance.RetrieveData(hay) >= 10)
+            if (GameDataFacade.Hay >= 10)
             {
                 int price = 10;
-                DataManager.Instance.SaveData(hayseeklevel, DataManager.Instance.RetrieveData(hayseeklevel) + 1);
+                GameDataFacade.HaySeekerLevel += 1;
                 AddHay(-1 * price);
             }
         }
 
         private void UpdateView()
         {
-            haylabel.Text = "Hay: " + DataManager.Instance.RetrieveData(hay).ToString();
+            haylabel.Text = "Hay: " + GameDataFacade.Hay.ToString();
         }
 
         //findhay method
         private void FindHay_Click(object sender, EventArgs e)
         {
-            AddHay(1 + DataManager.Instance.RetrieveData(hayseeklevel));
+            AddHay(GameDataFacade.HaySeekerLevel + 1);
             UpdateView();
         }
     }

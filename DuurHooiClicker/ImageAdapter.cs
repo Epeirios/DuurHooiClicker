@@ -65,8 +65,8 @@ namespace DuurHooiClicker
         public void CheckAchievement()
         {
             
-            int hayAmount = DataManager.Instance.RetrieveData(hay);
-            int AantalClicks = DataManager.Instance.RetrieveData(aantalclicks);
+            int hayAmount = GameDataFacade.Hay;
+            int AantalClicks = GameDataFacade.ClickCounter;
 
             int duizend = 1000;
             int tienduizend = 10000;

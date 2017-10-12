@@ -15,10 +15,10 @@ namespace DuurHooiClicker
 {
     public class DataManager
     {
-        private DataObject hay = new DataObject("Hay");
-        private DataObject aantalclicks = new DataObject("Aantalclicks");
-        private DataObject hayseeklevel = new DataObject("HaySeek");
-        private DataObject passivehayActive = new DataObject("PassiveHay");
+        private DataObject hay = new DataObject(DataTypes.Hay);
+        private DataObject aantalclicks = new DataObject(DataTypes.ClickCounter);
+        private DataObject hayseeklevel = new DataObject(DataTypes.HaySeekerLevel);
+        private DataObject passivehayActive = new DataObject(DataTypes.PassiveHayActive);
 
         private static string GameData = "GameData";
 
@@ -26,10 +26,10 @@ namespace DuurHooiClicker
 
         private DataManager()
         {
-            hay.Value = RetrieveData("Hay");
-            aantalclicks.Value = RetrieveData("Aantalclicks");
-            hayseeklevel.Value = RetrieveData("HaySeek");
-            passivehayActive.Value = RetrieveData("PassiveHay");
+            hay.Value = GetData(DataTypes.Hay);
+            aantalclicks.Value = GetData(DataTypes.ClickCounter);
+            hayseeklevel.Value = GetData(DataTypes.HaySeekerLevel);
+            passivehayActive.Value = GetData(DataTypes.PassiveHayActive);
         }
 
         public static DataManager Instance
@@ -44,23 +44,23 @@ namespace DuurHooiClicker
             }
         }
 
-        public void SaveData(string key, int value)
+        public void SetData(DataTypes key, int value)
         {
             // Store Data
             var prefs = Application.Context.GetSharedPreferences(GameData, FileCreationMode.Private);
             var prefEditor = prefs.Edit();
-            prefEditor.PutInt(key, value);
+            prefEditor.PutInt(key.ToString(), value);
             prefEditor.Commit();
         }
 
         // Function called from OnCreate
-        public int RetrieveData(string key)
+        public int GetData(DataTypes key)
         {
             DataObject data = new DataObject(key);
 
             // Retrieve 
             var prefs = Application.Context.GetSharedPreferences(GameData, FileCreationMode.Private);
-            return prefs.GetInt(data.Key, 0); // Default value is 0
+            return prefs.GetInt(data.Key.ToString(), 0); // Default value is 0
         }
 
         private void ResetData()

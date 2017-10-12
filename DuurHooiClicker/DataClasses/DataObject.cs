@@ -12,12 +12,12 @@ using Android.Widget;
 
 namespace DuurHooiClicker.DataClasses
 {
-    public class DataObject
+    public struct DataObject
     {
-        private string key;
+        private DataTypes key;
         private int value;
 
-        public string Key
+        public DataTypes Key
         {
             get
             {
@@ -37,7 +37,7 @@ namespace DuurHooiClicker.DataClasses
             }
         }
 
-        public DataObject(string key, int value = 0)
+        public DataObject(DataTypes key, int value = 0)
         {
             this.key = key;
             this.value = value;

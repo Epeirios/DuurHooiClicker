@@ -69,12 +69,12 @@ namespace DuurHooiClicker
             {
                 thumbIds2.Add(Resource.Drawable.achievement_honderdduizendhooi_enabled);
             }
-            if (hay <= 100000)
+            if (hayAmount <= 100000)
             {
                 thumbIds2.Add(Resource.Drawable.achievement_honderdduizendhooi_disabled);
             }
             //miljoen hooi
-            if (hay >= 1000000)
+            if (hayAmount >= 1000000)
             {
                 thumbIds2.Add(Resource.Drawable.achievement_miljoenhooi_enabled);
             }

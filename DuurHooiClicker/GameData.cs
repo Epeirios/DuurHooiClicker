@@ -13,7 +13,7 @@ using DuurHooiClicker.DataClasses;
 
 namespace DuurHooiClicker
 {
-    public static class GameDataFacade
+    public static class GameData
     {
         public static int Hay
         {

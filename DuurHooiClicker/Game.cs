@@ -5,7 +5,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using DuurHooiClicker.DataClasses;
 using System;
 using System.Timers;
 
@@ -15,10 +14,6 @@ namespace DuurHooiClicker
     public class Game : Activity
     {
         Timer t = new Timer();
-
-        private static string hay = "Hay";
-        private static string hayseeklevel = "HaySeek";
-        private static string passivehayActive = "PassiveHay";
 
         private int passivehay = 1;
 
@@ -51,7 +46,7 @@ namespace DuurHooiClicker
             //ResetSet();
             InitializeTimer();
 
-            t.Enabled = GameDataFacade.PassiveHayActive;            
+            t.Enabled = GameData.PassiveHayActive;            
 
             UpdateView();
         }
@@ -59,7 +54,7 @@ namespace DuurHooiClicker
         private void PassiveHay_Click(object sender, EventArgs e)
         {
             t.Enabled = !t.Enabled;
-            GameDataFacade.PassiveHayActive = t.Enabled;
+            GameData.PassiveHayActive = t.Enabled;
 
             if (t.Enabled)
             {
@@ -83,7 +78,7 @@ namespace DuurHooiClicker
 
         private void AddHay(int amountofhay)
         {
-            GameDataFacade.Hay += amountofhay;
+            GameData.Hay += amountofhay;
             UpdateView();
         }
 
@@ -97,23 +92,23 @@ namespace DuurHooiClicker
         //basicseeker method
         private void HayCursus_Click(object sender, EventArgs e)
         {
-            if (GameDataFacade.Hay >= 10)
+            if (GameData.Hay >= 10)
             {
                 int price = 10;
-                GameDataFacade.HaySeekerLevel += 1;
+                GameData.HaySeekerLevel += 1;
                 AddHay(-1 * price);
             }
         }
 
         private void UpdateView()
         {
-            haylabel.Text = "Hay: " + GameDataFacade.Hay.ToString();
+            haylabel.Text = "Hay: " + GameData.Hay.ToString();
         }
 
         //findhay method
         private void FindHay_Click(object sender, EventArgs e)
         {
-            AddHay(GameDataFacade.HaySeekerLevel + 1);
+            AddHay(GameData.HaySeekerLevel + 1);
             UpdateView();
         }
     }

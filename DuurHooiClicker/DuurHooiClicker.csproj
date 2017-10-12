@@ -57,9 +57,9 @@
     <Compile Include="Achievements.cs" />
     <Compile Include="DataClasses\DataTypes.cs" />
     <Compile Include="DataClasses\DataObject.cs" />
-    <Compile Include="DataManager.cs" />
+    <Compile Include="DataClasses\DataManager.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="GameDataFacade.cs" />
+    <Compile Include="GameData.cs" />
     <Compile Include="ImageAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

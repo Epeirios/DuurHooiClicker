@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace DuurHooiClicker.DataClasses
 {
-     public enum DataTypes
+    enum DataTypes
     {
         Hay,
         HaySeekerLevel,

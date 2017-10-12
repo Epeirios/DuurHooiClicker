@@ -9,28 +9,16 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using DuurHooiClicker.DataClasses;
 
-namespace DuurHooiClicker
+namespace DuurHooiClicker.DataClasses
 {
-    public class DataManager
+    class DataManager
     {
-        private DataObject hay = new DataObject(DataTypes.Hay);
-        private DataObject aantalclicks = new DataObject(DataTypes.ClickCounter);
-        private DataObject hayseeklevel = new DataObject(DataTypes.HaySeekerLevel);
-        private DataObject passivehayActive = new DataObject(DataTypes.PassiveHayActive);
-
         private static string GameData = "GameData";
 
         private static DataManager instance;
 
-        private DataManager()
-        {
-            hay.Value = GetData(DataTypes.Hay);
-            aantalclicks.Value = GetData(DataTypes.ClickCounter);
-            hayseeklevel.Value = GetData(DataTypes.HaySeekerLevel);
-            passivehayActive.Value = GetData(DataTypes.PassiveHayActive);
-        }
+        private DataManager() { }
 
         public static DataManager Instance
         {

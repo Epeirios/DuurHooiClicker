@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace DuurHooiClicker.DataClasses
 {
-    public struct DataObject
+    struct DataObject
     {
         private DataTypes key;
         private int value;

@@ -27,8 +27,6 @@ namespace DuurHooiClicker
 
             var btnAchievements = FindViewById<Button>(Resource.Id.btnAchievements);
             btnAchievements.Click += btnAchievements_Click;
-
-
         }
 
         private void btnGame_Click(object sender, System.EventArgs e)

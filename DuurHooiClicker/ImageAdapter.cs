@@ -11,9 +11,6 @@ namespace DuurHooiClicker
     {
         Context context;
 
-        private static string hay = "Hay";
-        private static string aantalclicks = "Aantalclicks";
-
         public ImageAdapter(Context c)
         {
             context = c;
@@ -53,7 +50,6 @@ namespace DuurHooiClicker
 
             CheckAchievement();
 
-
             imageView.SetImageResource(thumbIds2[position]);
 
             return imageView;
@@ -65,8 +61,8 @@ namespace DuurHooiClicker
         public void CheckAchievement()
         {
             
-            int hayAmount = GameDataFacade.Hay;
-            int AantalClicks = GameDataFacade.ClickCounter;
+            int hayAmount = GameData.Hay;
+            int AantalClicks = GameData.ClickCounter;
 
             int duizend = 1000;
             int tienduizend = 10000;

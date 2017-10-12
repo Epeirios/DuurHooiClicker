@@ -10,6 +10,8 @@ namespace DuurHooiClicker
     {
         Context context;
 
+        private static string hay = "Hay";
+
         public ImageAdapter(Context c)
         {
             context = c;
@@ -61,22 +63,22 @@ namespace DuurHooiClicker
         public void CheckAchievement()
         {
             //miljoen hooi
-            int hay = Game.Hay;
-            if(hay >= 1000000)
+            int hayAmount = DataManager.Instance.RetrieveData(hay);
+            if(hayAmount >= 1000000)
             {
                 thumbIds2.Add(Resource.Drawable.achievement_miljoenhooi_enabled);
             }
-            if(hay <= 1000000)
+            if(hayAmount <= 1000000)
             {
                 thumbIds2.Add(Resource.Drawable.achievement_miljoenhooi_disabled);
             }
 
             //miljard hooi
-            if(hay >= 1000000000)
+            if(hayAmount >= 1000000000)
             {
                 thumbIds2.Add(Resource.Drawable.achievement_miljardhooi_enabled);
             }
-            if(hay <= 1000000000)
+            if(hayAmount <= 1000000000)
             {
                 thumbIds2.Add(Resource.Drawable.achievement_miljardhooi_disabled);
             }

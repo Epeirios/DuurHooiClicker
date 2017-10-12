@@ -18,7 +18,21 @@ namespace DuurHooiClicker
 
             gridview.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
             {
-                Toast.MakeText(this, args.Position.ToString(), ToastLength.Short).Show();
+                //100.000 hay achievment
+                if(args.Position == 0)
+                {
+                    Toast.MakeText(this, "Collect 100.000 hay.", ToastLength.Short).Show();
+                }
+                //1.000.000 hay achievment
+                if (args.Position == 1)
+                {
+                    Toast.MakeText(this, "Collect 1.000.000 hay.", ToastLength.Short).Show();
+                }
+                //1.000.000.000 hay achievment
+                if (args.Position == 2)
+                {
+                    Toast.MakeText(this, "Collect 1.000.000.000 hay.", ToastLength.Short).Show();
+                }
             };
                 
             

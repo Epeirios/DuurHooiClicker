@@ -1,6 +1,7 @@
 ﻿using Android.Content;
 using Android.Views;
 using Android.Widget;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -17,7 +18,7 @@ namespace DuurHooiClicker
         //lengte moet ff gefixt worden
         public override int Count
         {
-            get { return 2; }
+            get{ return 3; }
         }
 
         public override Java.Lang.Object GetItem(int position)
@@ -60,9 +61,18 @@ namespace DuurHooiClicker
 
         public void CheckAchievement()
         {
-            //miljoen hooi
+            //100.000 hooi
             int hay = Game.Hay;
-            if(hay >= 1000000)
+            if (hay >= 100000)
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_honderdduizendhooi_enabled);
+            }
+            if (hay <= 100000)
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_honderdduizendhooi_disabled);
+            }
+            //miljoen hooi
+            if (hay >= 1000000)
             {
                 thumbIds2.Add(Resource.Drawable.achievement_miljoenhooi_enabled);
             }

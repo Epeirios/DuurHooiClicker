@@ -95,13 +95,19 @@
     <AndroidResource Include="Resources\drawable\icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\achievement_honderdduizendhooi_enabled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable\achievement_miljoenhooi_enabled.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\achievement_miljardhooi_enabled.jpg" />
+    <AndroidResource Include="Resources\drawable\achievement_honderdduizendhooi_disabled.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\achievement_miljoenhooi_disabled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\achievement_miljardhooi_enabled.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\achievement_miljardhooi_disabled.jpg" />

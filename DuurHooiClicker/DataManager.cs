@@ -16,6 +16,7 @@ namespace DuurHooiClicker
     public class DataManager
     {
         private DataObject hay = new DataObject("Hay");
+        private DataObject aantalclicks = new DataObject("Aantalclicks");
         private DataObject hayseeklevel = new DataObject("HaySeek");
         private DataObject passivehayActive = new DataObject("PassiveHay");
 
@@ -26,6 +27,7 @@ namespace DuurHooiClicker
         private DataManager()
         {
             hay.Value = RetrieveData("Hay");
+            aantalclicks.Value = RetrieveData("Aantalclicks");
             hayseeklevel.Value = RetrieveData("HaySeek");
             passivehayActive.Value = RetrieveData("PassiveHay");
         }

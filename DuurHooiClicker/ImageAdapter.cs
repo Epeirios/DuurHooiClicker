@@ -12,15 +12,16 @@ namespace DuurHooiClicker
         Context context;
 
         private static string hay = "Hay";
+        private static string aantalclicks = "Aantalclicks";
 
         public ImageAdapter(Context c)
         {
             context = c;
         }
-        //lengte moet ff gefixt worden
+        //lengte moet ff handmatig gefixt worden
         public override int Count
         {
-            get{ return 3; }
+            get{ return 6; }
         }
 
         public override Java.Lang.Object GetItem(int position)
@@ -63,14 +64,18 @@ namespace DuurHooiClicker
 
         public void CheckAchievement()
         {
-            //miljoen hooi
+            
             int hayAmount = DataManager.Instance.RetrieveData(hay);
+            int AantalClicks = DataManager.Instance.RetrieveData(aantalclicks);
 
+            int duizend = 1000;
+            int tienduizend = 10000;
             int honderduizend = 100000;
             int miljoen = 1000000;
             int miljard = 1000000000;
-
-            if(hayAmount >= honderduizend)
+            
+            //honderdduizend hooi
+            if (hayAmount >= honderduizend)
             {
                 thumbIds2.Add(Resource.Drawable.achievement_honderdduizendhooi_enabled);
             }
@@ -97,7 +102,33 @@ namespace DuurHooiClicker
             {
                 thumbIds2.Add(Resource.Drawable.achievement_miljardhooi_disabled);
             }
-
+            //1.000 clicks
+            if(AantalClicks >= duizend)
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_1000clicks_enabled);
+            }
+            else
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_1000clicks_disabled);
+            }
+            //10.000 clicks
+            if (AantalClicks >= tienduizend)
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_10000clicks_enabled);
+            }
+            else
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_10000clicks_disabled);
+            }
+            //100.000 clicks
+            if (AantalClicks >= honderduizend)
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_100000clicks_enabled);
+            }
+            else
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_100000clicks_disabled);
+            }
         }
     }
 }

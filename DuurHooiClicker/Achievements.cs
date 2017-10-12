@@ -33,6 +33,22 @@ namespace DuurHooiClicker
                 {
                     Toast.MakeText(this, "Collect 1.000.000.000 hay.", ToastLength.Short).Show();
                 }
+                
+                //1.000 clicks
+                if (args.Position == 3)
+                {
+                    Toast.MakeText(this, "Click hay 1.000 times.", ToastLength.Short).Show();
+                }
+                //10.000 clicks
+                if (args.Position == 4)
+                {
+                    Toast.MakeText(this, "Click hay 10.000 times.", ToastLength.Short).Show();
+                }
+                //100.000 clicks
+                if (args.Position == 5)
+                {
+                    Toast.MakeText(this, "Click hay 100.000 times.", ToastLength.Short).Show();
+                }
             };
                 
             

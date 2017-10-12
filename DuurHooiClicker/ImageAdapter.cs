@@ -65,30 +65,35 @@ namespace DuurHooiClicker
         {
             //miljoen hooi
             int hayAmount = DataManager.Instance.RetrieveData(hay);
-            if(hayAmount >= 1000000)
+
+            int honderduizend = 100000;
+            int miljoen = 1000000;
+            int miljard = 1000000000;
+
+            if(hayAmount >= honderduizend)
             {
                 thumbIds2.Add(Resource.Drawable.achievement_honderdduizendhooi_enabled);
             }
-            if (hayAmount <= 100000)
+            else
             {
                 thumbIds2.Add(Resource.Drawable.achievement_honderdduizendhooi_disabled);
             }
             //miljoen hooi
-            if (hayAmount >= 1000000)
+            if (hayAmount >= miljoen)
             {
                 thumbIds2.Add(Resource.Drawable.achievement_miljoenhooi_enabled);
             }
-            if(hayAmount <= 1000000)
+            else
             {
                 thumbIds2.Add(Resource.Drawable.achievement_miljoenhooi_disabled);
             }
 
             //miljard hooi
-            if(hayAmount >= 1000000000)
+            if(hayAmount >= miljard)
             {
                 thumbIds2.Add(Resource.Drawable.achievement_miljardhooi_enabled);
             }
-            if(hayAmount <= 1000000000)
+            else
             {
                 thumbIds2.Add(Resource.Drawable.achievement_miljardhooi_disabled);
             }

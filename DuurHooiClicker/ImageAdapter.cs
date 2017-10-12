@@ -14,10 +14,10 @@ namespace DuurHooiClicker
         {
             context = c;
         }
-
+        //lengte moet ff gefixt worden
         public override int Count
         {
-            get { return thumbIds.Length; }
+            get { return 2; }
         }
 
         public override Java.Lang.Object GetItem(int position)
@@ -47,13 +47,40 @@ namespace DuurHooiClicker
                 imageView = (ImageView)convertView;
             }
 
-            imageView.SetImageResource(thumbIds[position]);
+            CheckAchievement();
+
+
+            imageView.SetImageResource(thumbIds2[position]);
+
             return imageView;
         }
 
-        // references to our images
-        int[] thumbIds = {
-        Resource.Drawable.achievement_miljoenhooi_disabled, Resource.Drawable.achievement_miljardhooi_disabled,
-        };
+        //image list
+        List<int> thumbIds2 = new List<int>();
+
+        public void CheckAchievement()
+        {
+            //miljoen hooi
+            int hay = Game.Hay;
+            if(hay >= 1000000)
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_miljoenhooi_enabled);
+            }
+            if(hay <= 1000000)
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_miljoenhooi_disabled);
+            }
+
+            //miljard hooi
+            if(hay >= 1000000000)
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_miljardhooi_enabled);
+            }
+            if(hay <= 1000000000)
+            {
+                thumbIds2.Add(Resource.Drawable.achievement_miljardhooi_disabled);
+            }
+
+        }
     }
 }

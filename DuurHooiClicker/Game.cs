@@ -17,7 +17,7 @@ namespace DuurHooiClicker
         Timer t = new Timer();
 
 
-        private int hay;
+        private static int hay;
         private int hayseeklevel = 0;
         private int passivehay = 1;
         private bool passivehayActive = false;
@@ -31,6 +31,11 @@ namespace DuurHooiClicker
         ImageButton btnFindHay;
         Button btnHayCursus;
         Button btnPassiveHay;
+
+        public static int Hay
+        {
+            get { return hay; }
+        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

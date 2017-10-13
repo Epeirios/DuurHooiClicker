@@ -14,8 +14,6 @@ namespace DuurHooiClicker.DataClasses
 {
     class DataManager
     {
-        private static string GameData = "GameData";
-
         private static DataManager instance;
 
         private DataManager() { }
@@ -32,33 +30,36 @@ namespace DuurHooiClicker.DataClasses
             }
         }
 
-        public void SetData(DataTypes key, int value)
+        public void SetData(DataTypes key, int value, string pref)
         {
             // Store Data
-            var prefs = Application.Context.GetSharedPreferences(GameData, FileCreationMode.Private);
+            var prefs = Application.Context.GetSharedPreferences(pref, FileCreationMode.Private);
             var prefEditor = prefs.Edit();
             prefEditor.PutInt(key.ToString(), value);
             prefEditor.Commit();
         }
 
         // Function called from OnCreate
-        public int GetData(DataTypes key)
+        public int GetData(DataTypes key, string pref)
         {
             DataObject data = new DataObject(key);
 
             // Retrieve 
-            var prefs = Application.Context.GetSharedPreferences(GameData, FileCreationMode.Private);
+            var prefs = Application.Context.GetSharedPreferences(pref, FileCreationMode.Private);
             return prefs.GetInt(data.Key.ToString(), 0); // Default value is 0
         }
 
-        private void ResetData()
+        // Hard Reset for all Saved Data in Pref
+        public void ResetData(string pref)
         {
-            // TODO
-
-            // Reset
-            var prefs = Application.Context.GetSharedPreferences(GameData, FileCreationMode.Private);
+            var prefs = Application.Context.GetSharedPreferences(pref, FileCreationMode.Private);
             var prefEditor = prefs.Edit();
-            //prefEditor.PutInt(hayPref, 0);
+
+            foreach (DataTypes item in Enum.GetValues(typeof(DataTypes)))
+            {
+                prefEditor.PutInt(item.ToString(), 0);
+            }
+
             prefEditor.Commit();
         }
     }

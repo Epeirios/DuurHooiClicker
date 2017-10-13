@@ -15,15 +15,17 @@ namespace DuurHooiClicker
 {
     public static class GameData
     {
+        private static string pref = "GameData";
+
         public static int Hay
-        {
+        {         
             get
             {
-                return DataManager.Instance.GetData(DataTypes.Hay);
+                return Get(DataTypes.Hay);
             }
             set
             {
-                DataManager.Instance.SetData(DataTypes.Hay, value);
+                Set(DataTypes.Hay, value);
             }
         }
 
@@ -31,11 +33,11 @@ namespace DuurHooiClicker
         {
             get
             {
-                return DataManager.Instance.GetData(DataTypes.ClickCounter);
+                return Get(DataTypes.ClickCounter);
             }
             set
             {
-                DataManager.Instance.SetData(DataTypes.ClickCounter, value);
+                Set(DataTypes.ClickCounter, value);
             }
         }
 
@@ -43,11 +45,11 @@ namespace DuurHooiClicker
         {
             get
             {
-                return DataManager.Instance.GetData(DataTypes.HaySeekerLevel);
+                return Get(DataTypes.HaySeekerLevel);
             }
             set
             {
-                DataManager.Instance.SetData(DataTypes.HaySeekerLevel, value);
+                Set(DataTypes.HaySeekerLevel, value);
             }
         }
 
@@ -55,11 +57,11 @@ namespace DuurHooiClicker
         {
             get
             {
-                return DataManager.Instance.GetData(DataTypes.haycursus_cost);
+                return Get(DataTypes.haycursus_cost);
             }
             set
             {
-                DataManager.Instance.SetData(DataTypes.haycursus_cost, value);
+                Set(DataTypes.haycursus_cost, value);
             }
         }
 
@@ -67,12 +69,22 @@ namespace DuurHooiClicker
         {
             get
             {
-                return Convert.ToBoolean(DataManager.Instance.GetData(DataTypes.PassiveHayActive));
+                return Convert.ToBoolean(Get(DataTypes.PassiveHayActive));
             }
             set
             {
-                DataManager.Instance.SetData(DataTypes.PassiveHayActive, Convert.ToInt32(value));
+                Set(DataTypes.PassiveHayActive, Convert.ToInt32(value));
             }
+        }
+
+        private static int Get(DataTypes type)
+        {
+            return DataManager.Instance.GetData(type, pref);
+        }
+
+        private static void Set(DataTypes type, int value)
+        {
+            DataManager.Instance.SetData(type, value, pref);
         }
     }
 }

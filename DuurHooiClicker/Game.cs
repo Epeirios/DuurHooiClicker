@@ -16,6 +16,7 @@ namespace DuurHooiClicker
         Timer t = new Timer();
 
         private int passivehay = 1;
+        int AantalClicks = GameData.ClickCounter;
 
         TextView haylabel;
         ImageButton btnFindHay;
@@ -82,6 +83,11 @@ namespace DuurHooiClicker
             UpdateView();
         }
 
+        private void AddAantalClicks(int click)
+        {
+            GameData.ClickCounter += click;
+        }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             //do something here 
@@ -109,6 +115,7 @@ namespace DuurHooiClicker
         private void FindHay_Click(object sender, EventArgs e)
         {
             AddHay(GameData.HaySeekerLevel + 1);
+            AddAantalClicks(1);
             UpdateView();
         }
     }

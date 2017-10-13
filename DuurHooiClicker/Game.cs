@@ -15,6 +15,7 @@ namespace DuurHooiClicker
         private int passivehay = 1;
         int AantalClicks = GameData.ClickCounter;
 
+
         TextView haylabel;
         ImageButton btnFindHay;
         Button btnHayCursus;
@@ -27,6 +28,7 @@ namespace DuurHooiClicker
 
             // Create your application here
             SetContentView(Resource.Layout.Game);
+            GameData.haycursus_cost = 10;
 
             haylabel = FindViewById<TextView>(Resource.Id.HayLabel);
 
@@ -37,6 +39,7 @@ namespace DuurHooiClicker
             //findhay button
             btnHayCursus = FindViewById<Button>(Resource.Id.HayCursus);
             btnHayCursus.Click += HayCursus_Click;
+            btnHayCursus.Text = "Follow hay cursus " + GameData.haycursus_cost;
 
             //passivehay button
             btnPassiveHay = FindViewById<Button>(Resource.Id.btnPassiveHay);
@@ -112,11 +115,12 @@ namespace DuurHooiClicker
         //basicseeker method
         private void HayCursus_Click(object sender, EventArgs e)
         {
-            if (GameData.Hay >= 10)
+            if (GameData.Hay >= GameData.haycursus_cost)
             {
-                int price = 10;
                 GameData.HaySeekerLevel += 1;
-                AddHay(-1 * price);
+                AddHay(-1 * GameData.haycursus_cost);
+                GameData.haycursus_cost = Cost_Updater(GameData.haycursus_cost, 1.1, 1);
+                btnHayCursus.Text = "Follow hay cursus " + GameData.haycursus_cost;
             }
         }
 
@@ -131,6 +135,18 @@ namespace DuurHooiClicker
             AddHay(GameData.HaySeekerLevel + 1);
             AddAantalClicks(1);
             UpdateView();
+        }
+
+        //cost updater
+        private int Cost_Updater(Double value, Double rate, int count)
+        {
+            while(count > 0){
+                value = value * rate;
+                count--;
+            }
+            
+            int outcome = (int)Math.Round(value, 0);
+            return outcome;
         }
 
 

@@ -51,6 +51,18 @@ namespace DuurHooiClicker
             }
         }
 
+        public static int haycursus_cost
+        {
+            get
+            {
+                return DataManager.Instance.GetData(DataTypes.haycursus_cost);
+            }
+            set
+            {
+                DataManager.Instance.SetData(DataTypes.haycursus_cost, value);
+            }
+        }
+
         public static bool PassiveHayActive
         {
             get

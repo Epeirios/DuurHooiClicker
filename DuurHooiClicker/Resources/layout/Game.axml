@@ -20,20 +20,39 @@
         android:layout_marginLeft="70.0dp"
         android:layout_width="235.0dp"
         android:layout_marginRight="70.0dp" />
-    <Button
-        android:text="Follow Hay Cursus 10"
-        android:layout_width="match_parent"
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/HayCursus"
-        android:layout_marginLeft="65.0dp"
-        android:layout_marginTop="20.0dp"
-        android:layout_marginRight="65.0dp" />
+        android:layout_marginTop="10dp">
+        <Button
+            android:text="Follow Hay Cursus 10"
+            android:layout_width="160.0dp"
+            android:layout_height="60.0dp"
+            android:id="@+id/HayCursus"
+            android:layout_marginLeft="30.0dp"
+            android:layout_marginTop="0.0dp"
+            android:layout_marginRight="0.0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+        <Button
+            android:text="Upgrade"
+            android:layout_width="160.0dp"
+            android:layout_height="60.0dp"
+            android:id="@+id/btnUpgradeHayCursus"
+            android:layout_marginLeft="0.0dp"
+            android:layout_marginTop="0.0dp"
+            android:layout_marginRight="30.0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+    </TableRow>
     <Button
         android:text="Passive Hay 100"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnPassiveHay"
-        android:layout_marginLeft="65.0dp"
+        android:layout_marginLeft="25.0dp"
         android:layout_marginRight="65.0dp"
         android:layout_marginTop="20.0dp" />
 </LinearLayout>

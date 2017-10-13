@@ -1,9 +1,6 @@
 
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using System;
 using System.Timers;
@@ -22,6 +19,7 @@ namespace DuurHooiClicker
         ImageButton btnFindHay;
         Button btnHayCursus;
         Button btnPassiveHay;
+        Button btnUpgradeHayCursus;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -43,6 +41,22 @@ namespace DuurHooiClicker
             //passivehay button
             btnPassiveHay = FindViewById<Button>(Resource.Id.btnPassiveHay);
             btnPassiveHay.Click += PassiveHay_Click;
+
+            //upgrade hay button
+            btnUpgradeHayCursus = FindViewById<Button>(Resource.Id.btnUpgradeHayCursus);
+            btnUpgradeHayCursus.Click += (s, arg) => {
+                PopupMenu menu = new PopupMenu(this, btnUpgradeHayCursus);
+                menu.Inflate(Resource.Menu.upgrade_hay_menu);
+                menu.MenuItemClick += (s1, arg1) => {
+                    Toast.MakeText(this, "Upgraded 10x", ToastLength.Short).Show();
+                };
+
+                menu.DismissEvent += (s2, arg2) =>
+                {
+                    Toast.MakeText(this, "Upgraded 25x.", ToastLength.Short).Show();
+                };
+                menu.Show();
+            };
 
             //ResetSet();
             InitializeTimer();
@@ -118,5 +132,7 @@ namespace DuurHooiClicker
             AddAantalClicks(1);
             UpdateView();
         }
-    }
+
+
+}
 }

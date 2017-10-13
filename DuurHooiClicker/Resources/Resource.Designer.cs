@@ -99,26 +99,50 @@ namespace DuurHooiClicker
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060002
-			public const int FindHay = 2131099650;
+			// aapt resource value: 0x7f070002
+			public const int FindHay = 2131165186;
 			
-			// aapt resource value: 0x7f060003
-			public const int HayCursus = 2131099651;
+			// aapt resource value: 0x7f070004
+			public const int HayCursus = 2131165188;
 			
-			// aapt resource value: 0x7f060001
-			public const int HayLabel = 2131099649;
+			// aapt resource value: 0x7f070001
+			public const int HayLabel = 2131165185;
 			
-			// aapt resource value: 0x7f060006
-			public const int btnAchievements = 2131099654;
+			// aapt resource value: 0x7f070008
+			public const int btnAchievements = 2131165192;
 			
-			// aapt resource value: 0x7f060004
-			public const int btnPassiveHay = 2131099652;
+			// aapt resource value: 0x7f070006
+			public const int btnPassiveHay = 2131165190;
 			
-			// aapt resource value: 0x7f060005
-			public const int btnStartGame = 2131099653;
+			// aapt resource value: 0x7f070007
+			public const int btnStartGame = 2131165191;
 			
-			// aapt resource value: 0x7f060000
-			public const int gridAchievements = 2131099648;
+			// aapt resource value: 0x7f070005
+			public const int btnUpgradeHayCursus = 2131165189;
+			
+			// aapt resource value: 0x7f070009
+			public const int file_settings = 2131165193;
+			
+			// aapt resource value: 0x7f070000
+			public const int gridAchievements = 2131165184;
+			
+			// aapt resource value: 0x7f070003
+			public const int tableRow1 = 2131165187;
+			
+			// aapt resource value: 0x7f07000a
+			public const int upgrade_haycursus_10 = 2131165194;
+			
+			// aapt resource value: 0x7f07000d
+			public const int upgrade_haycursus_100 = 2131165197;
+			
+			// aapt resource value: 0x7f07000b
+			public const int upgrade_haycursus_25 = 2131165195;
+			
+			// aapt resource value: 0x7f07000c
+			public const int upgrade_haycursus_50 = 2131165196;
+			
+			// aapt resource value: 0x7f07000e
+			public const int upgrade_haycursus_max = 2131165198;
 			
 			static Id()
 			{
@@ -148,6 +172,22 @@ namespace DuurHooiClicker
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int upgrade_hay_menu = 2131099648;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}

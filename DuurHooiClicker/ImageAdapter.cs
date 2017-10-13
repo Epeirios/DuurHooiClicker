@@ -9,13 +9,17 @@ namespace DuurHooiClicker
 {
     public class ImageAdapter : BaseAdapter
     {
+        //image list
+        List<int> thumbIds2 = new List<int>();
         Context context;
+
 
         public ImageAdapter(Context c)
         {
             context = c;
         }
         //lengte moet ff handmatig gefixt worden
+
         public override int Count
         {
             get{ return 6; }
@@ -54,9 +58,6 @@ namespace DuurHooiClicker
 
             return imageView;
         }
-
-        //image list
-        List<int> thumbIds2 = new List<int>();
 
         public void CheckAchievement()
         {

@@ -117,7 +117,7 @@ namespace DuurHooiClicker
         {
             if (GameData.Hay >= GameData.HaycursusCost)
             {
-                GameData.HaySeekerLevel += 1;
+                GameData.HayCursusGain += 1;
                 AddHay(-1 * GameData.HaycursusCost);
                 GameData.HaycursusCost = Cost_Updater(GameData.HaycursusCost, 1.1, 1);
                 btnHayCursus.Text = "Follow hay cursus " + GameData.HaycursusCost;

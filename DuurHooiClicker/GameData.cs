@@ -45,11 +45,11 @@ namespace DuurHooiClicker
         {
             get
             {
-                return DataManager.Instance.GetData(DataTypes.HayCursusGain);
+                return Get(DataTypes.HayCursusGain);
             }
             set
             {
-                DataManager.Instance.SetData(DataTypes.HayCursusGain, value);
+                Set(DataTypes.HayCursusGain, value);
             }
         }
 

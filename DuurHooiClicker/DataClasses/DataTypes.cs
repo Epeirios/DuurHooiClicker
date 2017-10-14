@@ -15,7 +15,7 @@ namespace DuurHooiClicker.DataClasses
     enum DataTypes
     {
         Hay,
-        HaySeekerLevel,
+        HayCursusGain,
         PassiveHayActive,
         ClickCounter,
         haycursus_cost,

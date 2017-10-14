@@ -43,7 +43,7 @@ namespace DuurHooiClicker
             if (convertView == null)
             {  // if it's not recycled, initialize some attributes
                 imageView = new ImageView(context);
-                imageView.LayoutParameters = new GridView.LayoutParams(350, 350);
+                imageView.LayoutParameters = new GridView.LayoutParams(300,300);
                 imageView.SetScaleType(ImageView.ScaleType.CenterCrop);
                 imageView.SetPadding(8, 8, 8, 8);
             }

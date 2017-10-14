@@ -39,15 +39,15 @@ namespace DuurHooiClicker
             }
         }
 
-        public static int HaySeekerLevel
+        public static int HayCursusGain
         {
             get
             {
-                return DataManager.Instance.GetData(DataTypes.HaySeekerLevel);
+                return DataManager.Instance.GetData(DataTypes.HayCursusGain);
             }
             set
             {
-                DataManager.Instance.SetData(DataTypes.HaySeekerLevel, value);
+                DataManager.Instance.SetData(DataTypes.HayCursusGain, value);
             }
         }
 

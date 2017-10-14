@@ -2,7 +2,6 @@
 using Android.Widget;
 using Android.OS;
 using Android.Media;
-using DuurHooiClicker.DataClasses;
 
 namespace DuurHooiClicker
 {

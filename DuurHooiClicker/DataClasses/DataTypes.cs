@@ -18,6 +18,6 @@ namespace DuurHooiClicker.DataClasses
         HayCursusGain,
         PassiveHayActive,
         ClickCounter,
-        haycursus_cost,
+        HaycursusCost,
     }
 }

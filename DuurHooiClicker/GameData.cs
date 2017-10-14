@@ -53,15 +53,15 @@ namespace DuurHooiClicker
             }
         }
 
-        public static int haycursus_cost
+        public static int HaycursusCost
         {
             get
             {
-                return Get(DataTypes.haycursus_cost);
+                return Get(DataTypes.HaycursusCost);
             }
             set
             {
-                Set(DataTypes.haycursus_cost, value);
+                Set(DataTypes.HaycursusCost, value);
             }
         }
 

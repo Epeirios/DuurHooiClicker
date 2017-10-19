@@ -41,6 +41,34 @@ namespace DuurHooiClicker
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f060001
+			public const int black = 2131099649;
+			
+			// aapt resource value: 0x7f060003
+			public const int darkgray = 2131099651;
+			
+			// aapt resource value: 0x7f060004
+			public const int gray = 2131099652;
+			
+			// aapt resource value: 0x7f060002
+			public const int silver = 2131099650;
+			
+			// aapt resource value: 0x7f060000
+			public const int white = 2131099648;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
@@ -81,10 +109,19 @@ namespace DuurHooiClicker
 			public const int achievement_miljoenhooi_enabled = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int hay = 2130837516;
+			public const int background = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int icon = 2130837517;
+			public const int hay = 2130837517;
+			
+			// aapt resource value: 0x7f02000e
+			public const int icon = 2130837518;
+			
+			// aapt resource value: 0x7f02000f
+			public const int icon_achievements = 2130837519;
+			
+			// aapt resource value: 0x7f020010
+			public const int icon_settings = 2130837520;
 			
 			static Drawable()
 			{
@@ -99,50 +136,53 @@ namespace DuurHooiClicker
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070002
-			public const int FindHay = 2131165186;
+			// aapt resource value: 0x7f090003
+			public const int FindHay = 2131296259;
 			
-			// aapt resource value: 0x7f070004
-			public const int HayCursus = 2131165188;
+			// aapt resource value: 0x7f090005
+			public const int HayCursus = 2131296261;
 			
-			// aapt resource value: 0x7f070001
-			public const int HayLabel = 2131165185;
+			// aapt resource value: 0x7f090002
+			public const int HayLabel = 2131296258;
 			
-			// aapt resource value: 0x7f070008
-			public const int btnAchievements = 2131165192;
+			// aapt resource value: 0x7f090007
+			public const int btnPassiveHay = 2131296263;
 			
-			// aapt resource value: 0x7f070006
-			public const int btnPassiveHay = 2131165190;
+			// aapt resource value: 0x7f090006
+			public const int btnUpgradeHayCursus = 2131296262;
 			
-			// aapt resource value: 0x7f070007
-			public const int btnStartGame = 2131165191;
+			// aapt resource value: 0x7f09000a
+			public const int file_settings = 2131296266;
 			
-			// aapt resource value: 0x7f070005
-			public const int btnUpgradeHayCursus = 2131165189;
+			// aapt resource value: 0x7f090001
+			public const int gridAchievements = 2131296257;
 			
-			// aapt resource value: 0x7f070009
-			public const int file_settings = 2131165193;
+			// aapt resource value: 0x7f090008
+			public const int menu_achievements = 2131296264;
 			
-			// aapt resource value: 0x7f070000
-			public const int gridAchievements = 2131165184;
+			// aapt resource value: 0x7f090009
+			public const int menu_settings = 2131296265;
 			
-			// aapt resource value: 0x7f070003
-			public const int tableRow1 = 2131165187;
+			// aapt resource value: 0x7f090004
+			public const int tableRow1 = 2131296260;
 			
-			// aapt resource value: 0x7f07000a
-			public const int upgrade_haycursus_10 = 2131165194;
+			// aapt resource value: 0x7f090000
+			public const int toolbar = 2131296256;
 			
-			// aapt resource value: 0x7f07000d
-			public const int upgrade_haycursus_100 = 2131165197;
+			// aapt resource value: 0x7f09000b
+			public const int upgrade_haycursus_10 = 2131296267;
 			
-			// aapt resource value: 0x7f07000b
-			public const int upgrade_haycursus_25 = 2131165195;
+			// aapt resource value: 0x7f09000e
+			public const int upgrade_haycursus_100 = 2131296270;
 			
-			// aapt resource value: 0x7f07000c
-			public const int upgrade_haycursus_50 = 2131165196;
+			// aapt resource value: 0x7f09000c
+			public const int upgrade_haycursus_25 = 2131296268;
 			
-			// aapt resource value: 0x7f07000e
-			public const int upgrade_haycursus_max = 2131165198;
+			// aapt resource value: 0x7f09000d
+			public const int upgrade_haycursus_50 = 2131296269;
+			
+			// aapt resource value: 0x7f09000f
+			public const int upgrade_haycursus_max = 2131296271;
 			
 			static Id()
 			{
@@ -164,7 +204,7 @@ namespace DuurHooiClicker
 			public const int Game = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Main = 2130903042;
+			public const int toolbar = 2130903042;
 			
 			static Layout()
 			{
@@ -179,8 +219,11 @@ namespace DuurHooiClicker
 		public partial class Menu
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int upgrade_hay_menu = 2131099648;
+			// aapt resource value: 0x7f080000
+			public const int top_menus = 2131230720;
+			
+			// aapt resource value: 0x7f080001
+			public const int upgrade_hay_menu = 2131230721;
 			
 			static Menu()
 			{
@@ -220,6 +263,22 @@ namespace DuurHooiClicker
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f070000
+			public const int MyTheme = 2131165184;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}

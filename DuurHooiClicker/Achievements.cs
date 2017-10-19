@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.OS;
+using Android.Views;
 using Android.Widget;
 
 namespace DuurHooiClicker
@@ -10,16 +11,24 @@ namespace DuurHooiClicker
 
         protected override void OnCreate(Bundle bundle)
         {
+            SetContentView(Resource.Layout.Achievements);
             base.OnCreate(bundle);
 
-            SetContentView(Resource.Layout.Achievements);
+            //toolbar
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            SetActionBar(toolbar);
+            ActionBar.Title = "Achievements";
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            ActionBar.SetHomeButtonEnabled(true);
+
+            //gridview
             var gridview = FindViewById<GridView>(Resource.Id.gridAchievements);
             gridview.Adapter = new ImageAdapter(this);
 
             gridview.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
             {
                 //100.000 hay achievment
-                if(args.Position == 0)
+                if (args.Position == 0)
                 {
                     Toast.MakeText(this, "Collect 100.000 hay.", ToastLength.Short).Show();
                 }
@@ -33,7 +42,7 @@ namespace DuurHooiClicker
                 {
                     Toast.MakeText(this, "Collect 1.000.000.000 hay.", ToastLength.Short).Show();
                 }
-                
+
                 //1.000 clicks
                 if (args.Position == 3)
                 {
@@ -50,8 +59,18 @@ namespace DuurHooiClicker
                     Toast.MakeText(this, "Click hay 100.000 times.", ToastLength.Short).Show();
                 }
             };
-                
-            
         }
+
+
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            //Back button pressed
+            if (item.ItemId == Android.Resource.Id.Home)
+                this.OnBackPressed();
+            return base.OnOptionsItemSelected(item);
+        }
+
+
     }
 }

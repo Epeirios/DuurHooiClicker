@@ -4,7 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
+    android:minHeight="25px"
+    android:background="@drawable/background">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
     <TextView
         android:text="Hay: 0"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -12,13 +16,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/HayLabel"
         android:layout_marginRight="65.0dp"
-        android:layout_marginLeft="65.0dp" />
+        android:layout_marginLeft="65.0dp"
+        android:layout_marginTop="7.5dp" />
     <ImageButton
         android:src="@drawable/hay"
-        android:layout_height="wrap_content"
+        android:layout_height="187.0dp"
         android:id="@+id/FindHay"
         android:layout_marginLeft="70.0dp"
-        android:layout_width="235.0dp"
+        android:layout_width="232.5dp"
         android:layout_marginRight="70.0dp" />
     <TableRow
         android:id="@+id/tableRow1"
@@ -52,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnPassiveHay"
-        android:layout_marginLeft="25.0dp"
+        android:layout_marginLeft="24.0dp"
         android:layout_marginRight="65.0dp"
-        android:layout_marginTop="20.0dp" />
+        android:layout_marginTop="14.0dp" />
 </LinearLayout>

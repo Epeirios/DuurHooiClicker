@@ -30,23 +30,25 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:minWidth="25px"
+        android:minHeight="25px">
         <Button
-            android:text="Follow Hay Cursus 10"
-            android:layout_width="160.0dp"
+            android:text="1x"
+            android:layout_width="59.5dp"
             android:layout_height="60.0dp"
-            android:id="@+id/HayCursus"
+            android:id="@+id/btnBuyAmount"
             android:layout_marginLeft="30.0dp"
             android:layout_marginTop="0.0dp"
             android:layout_marginRight="0.0dp"
             android:layout_gravity="center"
             android:layout_weight="1" />
         <Button
-            android:text="Upgrade"
+            android:text="Follow Hay Cursus 10"
             android:layout_width="160.0dp"
             android:layout_height="60.0dp"
-            android:id="@+id/btnUpgradeHayCursus"
-            android:layout_marginLeft="0.0dp"
+            android:id="@+id/HayCursus"
+            android:layout_marginLeft="41.5dp"
             android:layout_marginTop="0.0dp"
             android:layout_marginRight="30.0dp"
             android:layout_gravity="center"
@@ -60,4 +62,9 @@
         android:layout_marginLeft="24.0dp"
         android:layout_marginRight="65.0dp"
         android:layout_marginTop="14.0dp" />
+    <TextView
+        android:text="Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/testview" />
 </LinearLayout>

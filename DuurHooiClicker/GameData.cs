@@ -77,6 +77,18 @@ namespace DuurHooiClicker
             }
         }
 
+        public static int BuyAmount
+        {
+            get
+            {
+                return Get(DataTypes.BuyAmount);
+            }
+            set
+            {
+                Set(DataTypes.BuyAmount, value);
+            }
+        }
+
         private static int Get(DataTypes type)
         {
             return DataManager.Instance.GetData(type, pref);

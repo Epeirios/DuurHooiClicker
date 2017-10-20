@@ -19,7 +19,8 @@ namespace DuurHooiClicker.DataClasses
         HayCursusGain,
         HaycursusCost,
         PassiveHayActive,
-        
-        
+        BuyAmount,
+
+
     }
 }

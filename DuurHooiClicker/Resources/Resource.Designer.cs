@@ -139,50 +139,35 @@ namespace DuurHooiClicker
 			// aapt resource value: 0x7f090003
 			public const int FindHay = 2131296259;
 			
-			// aapt resource value: 0x7f090005
-			public const int HayCursus = 2131296261;
+			// aapt resource value: 0x7f090006
+			public const int HayCursus = 2131296262;
 			
 			// aapt resource value: 0x7f090002
 			public const int HayLabel = 2131296258;
 			
+			// aapt resource value: 0x7f090005
+			public const int btnBuyAmount = 2131296261;
+			
 			// aapt resource value: 0x7f090007
 			public const int btnPassiveHay = 2131296263;
-			
-			// aapt resource value: 0x7f090006
-			public const int btnUpgradeHayCursus = 2131296262;
-			
-			// aapt resource value: 0x7f09000a
-			public const int file_settings = 2131296266;
 			
 			// aapt resource value: 0x7f090001
 			public const int gridAchievements = 2131296257;
 			
-			// aapt resource value: 0x7f090008
-			public const int menu_achievements = 2131296264;
-			
 			// aapt resource value: 0x7f090009
-			public const int menu_settings = 2131296265;
+			public const int menu_achievements = 2131296265;
+			
+			// aapt resource value: 0x7f09000a
+			public const int menu_settings = 2131296266;
 			
 			// aapt resource value: 0x7f090004
 			public const int tableRow1 = 2131296260;
 			
+			// aapt resource value: 0x7f090008
+			public const int testview = 2131296264;
+			
 			// aapt resource value: 0x7f090000
 			public const int toolbar = 2131296256;
-			
-			// aapt resource value: 0x7f09000b
-			public const int upgrade_haycursus_10 = 2131296267;
-			
-			// aapt resource value: 0x7f09000e
-			public const int upgrade_haycursus_100 = 2131296270;
-			
-			// aapt resource value: 0x7f09000c
-			public const int upgrade_haycursus_25 = 2131296268;
-			
-			// aapt resource value: 0x7f09000d
-			public const int upgrade_haycursus_50 = 2131296269;
-			
-			// aapt resource value: 0x7f09000f
-			public const int upgrade_haycursus_max = 2131296271;
 			
 			static Id()
 			{
@@ -221,9 +206,6 @@ namespace DuurHooiClicker
 			
 			// aapt resource value: 0x7f080000
 			public const int top_menus = 2131230720;
-			
-			// aapt resource value: 0x7f080001
-			public const int upgrade_hay_menu = 2131230721;
 			
 			static Menu()
 			{

@@ -17,11 +17,13 @@ namespace DuurHooiClicker
         int AantalClicks = GameData.ClickCounter;
 
 
+
         TextView haylabel;
+        TextView testview;
         ImageButton btnFindHay;
         Button btnHayCursus;
         Button btnPassiveHay;
-        Button btnUpgradeHayCursus;
+        Button btnBuyAmount;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -35,7 +37,13 @@ namespace DuurHooiClicker
             ActionBar.Title = "Hay clicker";
 
             haylabel = FindViewById<TextView>(Resource.Id.HayLabel);
+            testview = FindViewById<TextView>(Resource.Id.testview);
+            GameData.BuyAmount = 1;
+            testview.Text = GameData.BuyAmount.ToString();
 
+            //buyamount button
+            btnBuyAmount = FindViewById<Button>(Resource.Id.btnBuyAmount);
+            btnBuyAmount.Click += BuyAmount_Click;
 
             //findhay button
             btnFindHay = FindViewById<ImageButton>(Resource.Id.FindHay);
@@ -56,22 +64,6 @@ namespace DuurHooiClicker
             //passivehay button
             btnPassiveHay = FindViewById<Button>(Resource.Id.btnPassiveHay);
             btnPassiveHay.Click += PassiveHay_Click;
-
-            //upgrade hay button
-            btnUpgradeHayCursus = FindViewById<Button>(Resource.Id.btnUpgradeHayCursus);
-            btnUpgradeHayCursus.Click += (s, arg) => {
-                PopupMenu menu = new PopupMenu(this, btnUpgradeHayCursus);
-                menu.Inflate(Resource.Menu.upgrade_hay_menu);
-                menu.MenuItemClick += (s1, arg1) => {
-                    Toast.MakeText(this, "Upgraded 10x", ToastLength.Short).Show();
-                };
-
-                menu.DismissEvent += (s2, arg2) =>
-                {
-                    Toast.MakeText(this, "Upgraded 25x.", ToastLength.Short).Show();
-                };
-                menu.Show();
-            };
 
             //ResetSet();
             InitializeTimer();
@@ -132,13 +124,76 @@ namespace DuurHooiClicker
         //follow haycursus
         private void HayCursus_Click(object sender, EventArgs e)
         {
+            
             if (GameData.Hay >= GameData.HaycursusCost)
             {
-                GameData.HayCursusGain += 1;
+                GameData.HayCursusGain = GameData.HayCursusGain + GameData.BuyAmount;
+                //dit moet je fixen 
                 AddHay(-1 * GameData.HaycursusCost);
-                GameData.HaycursusCost = Cost_Updater(GameData.HaycursusCost, 1.1, 1);
+                GameData.HaycursusCost = Cost_Updater(GameData.HaycursusCost, 1.1, GameData.BuyAmount);
                 btnHayCursus.Text = "Follow hay cursus " + GameData.HaycursusCost;
             }
+        }
+
+        //buyamount
+        private void BuyAmount_Click(object sender, EventArgs e)
+        {
+            btnBuyAmount = FindViewById<Button>(Resource.Id.btnBuyAmount);
+
+            
+            bool stop = false;
+            if (GameData.BuyAmount == 1 && stop == false)
+            {
+                stop = true;
+                GameData.BuyAmount = 10;
+            }
+            if (GameData.BuyAmount == 10 && stop == false)
+            {
+                stop = true;
+                GameData.BuyAmount = 25;
+            }
+            if (GameData.BuyAmount == 25 && stop == false)
+            {
+                stop = true;
+                GameData.BuyAmount = 50;
+            }
+            if (GameData.BuyAmount == 50 && stop == false)
+            {
+                stop = true;
+                GameData.BuyAmount = 100;
+            }
+            if (GameData.BuyAmount == 100 && stop == false)
+            {
+                stop = true;
+                GameData.BuyAmount = 1;
+            }
+            testview.Text = GameData.BuyAmount.ToString();
+
+
+            int x = 0;
+            int amount = GameData.BuyAmount-1;
+            double price = GameData.HaycursusCost;
+            double totaal = price;
+
+            while(x < amount)
+            {
+                x++;
+                totaal = totaal + price * 1.1;
+                price = price * 1.1;
+
+                price = (int)Math.Round(price);
+                totaal = (int)Math.Round(totaal);
+            }
+            //double price = GameData.HaycursusCost;
+            //double amount = GameData.BuyAmount;
+
+
+            //price = GameData.HaycursusCost * Math.Pow(1.1, amount-1);
+            //price = (int)Math.Round(price);
+
+            btnHayCursus.Text = "Follow hay cursus: " + totaal.ToString();
+            //GameData.BuyAmount = amount;
+            btnBuyAmount.Text = GameData.BuyAmount.ToString() + "x";
         }
 
         private void UpdateView()

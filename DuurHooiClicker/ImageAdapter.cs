@@ -62,7 +62,7 @@ namespace DuurHooiClicker
         public void CheckAchievement()
         {
             
-            int hayAmount = GameData.Hay;
+            int hayAmount = Convert.ToInt32(GameData.Hay);
             int AantalClicks = GameData.ClickCounter;
 
             int duizend = 1000;
